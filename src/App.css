@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('./hero-bg.png'); /* ou caminho correto se estiver em 'public' */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: white; /* ou outro ajuste conforme necessário */
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('/hero-bg.png') center/cover no-repeat;
+  z-index: -1;
+  opacity: 1;
+}
+.wrapper {
+  position: relative;
+  background-color: transparent !important;
+  z-index: 1;
+}
