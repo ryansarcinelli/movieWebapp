@@ -1,12 +1,134 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎬 Movie Finder App
 
-Currently, two official plugins are available:
+A modern and responsive movie search app built with React, TMDb API, and Appwrite as a backend-as-a-service.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔍 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Real-time movie search with debounce optimization
+- Trending movies section using Appwrite data
+- Loading feedback with spinner component
+- Search tracking and analytics powered by Appwrite
+- Modern UI with smooth animations and responsive design
+
+---
+
+## 🧰 Technologies Used
+
+- **React + Vite**
+- **TMDb API** – to fetch movie data
+- **Appwrite** – BaaS for storing trending and search statistics
+- **Tailwind CSS** – utility-first styling
+- **react-use** – used for the debounce functionality
+
+---
+
+## 🚀 Getting Started
+
+```bash
+
+# Install dependencies
+npm install
+
+# Create environment variables file
+cp .env.local.example .env.local
+
+# Run the app
+npm run dev
+```
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env.local` file with the following content:
+
+```env
+VITE_TMDB_API_KEY=your_tmdb_api_key
+VITE_APPWRITE_ENDPOINT=https://[your-instance].appwrite.io/v1
+VITE_APPWRITE_PROJECT=your_project_id
+VITE_APPWRITE_DATABASE=your_database_id
+VITE_APPWRITE_COLLECTION=your_collection_id
+VITE_APPWRITE_TRENDING_COLLECTION=your_trending_collection_id
+```
+
+---
+
+## 📁 Project Structure
+
+```
+movie-finder-app/
+├── public/
+│   ├── hero.png
+│   ├── hero-bg.png
+│   ├── logo.png
+│   ├── no-movie.png
+│   ├── search.svg
+│   ├── star.svg
+│   └── vite.svg
+│
+├── src/
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── MovieCard.jsx
+│   │   ├── Search.jsx
+│   │   └── Spinner.jsx
+│   ├── App.css
+│   ├── App.jsx
+│   ├── appwrite.js
+│   ├── index.css
+│   └── main.jsx
+│
+├── .env.local
+├── .gitignore
+├── README.md
+├── index.html
+├── vite.config.js
+└── package.json
+```
+
+---
+
+## 📦 How Appwrite is Used
+
+- When a user searches for a movie, the search is logged in the Appwrite database.
+- Most-searched movies are stored in a dedicated "trending" collection.
+- The `getTrendingMovies()` function fetches and displays trending movies from Appwrite.
+
+---
+
+## 📸 Preview (optional)
+
+> You can add a screenshot or GIF here to showcase the UI.
+
+---
+
+## 📤 Deployment
+
+Can be deployed easily using:
+
+- **Vercel**
+- **Netlify**
+- **Firebase Hosting**
+
+To build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## 👤 Author
+
+**Ryan Carlos Sarcinelli**  
+[GitHub](https://github.com/your-username) • [LinkedIn](https://linkedin.com/in/your-profile)
+
+---
+
+## 📄 License
+
+MIT © 2025
